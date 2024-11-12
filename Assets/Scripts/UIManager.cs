@@ -35,6 +35,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateMoneyUI(float money)
     {
-        moneyAmount.text = "Money : $" + money.ToString();
+        moneyAmount.text = "Money : $ " + money.ToString("F1");
     }
 }
