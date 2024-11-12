@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // 싱글톤으로 다른 클래스에서 접근 가능하게 할 것
+
+    public static CurrencyManager Instance;
+
+    private float money;
+
+    private void Awake()
     {
-        
+        Instance = this;
+    }
+    public void EarnMoney(float amount)
+    {
+        money += amount;
+        UIManager.Instance.UpdateMoneyUI(money);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpendMoney(float amount)
     {
-        
+        if (CanAfford(amount))
+        {
+            money -= amount;
+            UIManager.Instance.UpdateMoneyUI(money);
+        }
     }
+
+    public bool CanAfford(float amount)
+    {
+        return money >= amount;
+    }
+
 }

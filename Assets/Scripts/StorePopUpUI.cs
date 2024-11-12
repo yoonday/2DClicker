@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class StorePopUpUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject storePopUp;  // 스토어 버튼 팝업
 
-    // Update is called once per frame
-    void Update()
+    public void ToggleStorePopup()
     {
-        
+        bool isActive = storePopUp.activeSelf;
+        storePopUp.SetActive(!isActive);
     }
 }
