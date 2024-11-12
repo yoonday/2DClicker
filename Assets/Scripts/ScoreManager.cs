@@ -27,7 +27,6 @@ public class ScoreManager : MonoBehaviour
     public void UpdateBeanCount(int amount)
     {
         beanCount += amount;
-        Debug.Log("Ä¿ÇÇ Äá: " + beanCount);
         UIManager.Instance.UpdateBeanUI(beanCount);
     }
 
