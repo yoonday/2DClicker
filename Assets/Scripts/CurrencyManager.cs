@@ -8,7 +8,8 @@ public class CurrencyManager : MonoBehaviour
 
     public static CurrencyManager Instance;
 
-    private float money = 0;
+    // **** TODO :: 테스트 목적으로 100으로 변경 → 다시 0으로 바꾸기
+    private float money = 100;
 
     private void Awake()
     {
