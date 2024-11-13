@@ -479,10 +479,10 @@ MonoBehaviour:
       - m_Target: {fileID: 671893611}
         m_TargetAssemblyTypeName: AutoClickManager, Assembly-CSharp
         m_MethodName: OnAutoClick
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: bb1739b75e67f0c469fd5380357a0985, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ItemData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -612,10 +612,10 @@ MonoBehaviour:
       - m_Target: {fileID: 671893611}
         m_TargetAssemblyTypeName: AutoClickManager, Assembly-CSharp
         m_MethodName: OnAutoClick
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 62d6fdcbea15158428b28f2b74d3d187, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ItemData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
