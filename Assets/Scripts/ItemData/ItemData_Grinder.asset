@@ -15,7 +15,9 @@ MonoBehaviour:
   itemName: Grinder
   price: 10
   initialUpgradeCost: 2
+  currentLevel: 1
   maxLevel: 20
   description: "\uCEE4\uD53C \uCF69\uC744 \uBE60\uB974\uAC8C \uAC08 \uC218 \uC788\uB2E4"
   amount: 1
+  tag: Auto
   autoBtnName: btn_Auto_Bean

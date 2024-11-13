@@ -15,7 +15,9 @@ MonoBehaviour:
   itemName: Coffee Machine
   price: 50
   initialUpgradeCost: 5
+  currentLevel: 1
   maxLevel: 10
   description: "\uCEE4\uD53C\uB97C \uBE60\uB974\uAC8C \uB9CC\uB4E4 \uC218 \uC788\uB2E4"
   amount: 1
+  tag: Auto
   autoBtnName: btn_Auto_Coffee
