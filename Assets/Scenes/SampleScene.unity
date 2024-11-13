@@ -2046,7 +2046,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickInterval: 2
   beanAutoBtn: {fileID: 173626729}
+  beanCoroutineColor: {r: 0.9528302, g: 0.3878117, b: 0, a: 1}
   coffeeAutoBtn: {fileID: 180543896}
+  coffeeCoroutineColor: {r: 0.9529412, g: 0.3882353, b: 0, a: 1}
 --- !u!114 &671893612
 MonoBehaviour:
   m_ObjectHideFlags: 0

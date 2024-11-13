@@ -13,11 +13,13 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
     public float clickInterval = 2.0f;
 
     public Button beanAutoBtn;
-    private Color beanInitialColor;
+    private Color beanInitialColor; // 버튼 기본 색
+    public Color beanCoroutineColor; // 코루틴 중일 때 색
 
     public Button coffeeAutoBtn;
-    private Color CoffeeInitialColor;
-  
+    private Color coffeeInitialColor;
+    public Color coffeeCoroutineColor;
+
     private bool isAutoBtnActivate;
 
 
@@ -31,7 +33,7 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
         }
         if (coffeeAutoBtn != null)
         {
-            CoffeeInitialColor = coffeeAutoBtn.image.color;
+            coffeeInitialColor = coffeeAutoBtn.image.color;
         }
     }
 
@@ -47,21 +49,38 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
     public void OnAutoClick(ItemData itemData) // UIManager - UpdateUnlock처럼 이름으로 찾기
     {
         GameObject targetButton = GameObject.Find(itemData.autoBtnName);
-        // TODO :: 색상 변경하기
-        // Button buttonComponent = targetButton.GetComponent<Button>();
+        Button buttonComponent = targetButton.GetComponent<Button>(); // 색상 변경하기 위함
 
         if (coroutine != null) // 이미 실행 중이면 멈추기
         {
             StopCoroutine(coroutine);
             coroutine = null;
             isAutoBtnActivate = false;
-            // TODO :: 색상 원래 색으로 돌리기
+            
+            // 색상 원래 색으로 돌리기
+            if (itemData.autoBtnName == "btn_Auto_Bean" && beanAutoBtn != null)
+            {
+                beanAutoBtn.image.color = beanInitialColor;
+            }
+            else if (itemData.autoBtnName == "btn_Auto_Coffee" && coffeeAutoBtn != null)
+            {
+                coffeeAutoBtn.image.color = coffeeInitialColor;
+            }
         }
         else
         {
             coroutine = StartCoroutine(AutoClickCoroutine(itemData));
             isAutoBtnActivate = true;
-            // TODO :: 버튼 활성화되었을 때 색 다르게 바꾸기
+
+            // 버튼 활성화되었을 때 색 다르게 바꾸기
+            if (itemData.autoBtnName == "btn_Auto_Bean" && beanAutoBtn != null)
+            {
+                beanAutoBtn.image.color = beanCoroutineColor; 
+            }
+            else if (itemData.autoBtnName == "btn_Auto_Coffee" && coffeeAutoBtn != null)
+            {
+                coffeeAutoBtn.image.color = coffeeCoroutineColor;
+            }
         }
 
     }
