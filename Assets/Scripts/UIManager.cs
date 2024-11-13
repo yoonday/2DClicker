@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,11 +13,18 @@ public class UIManager : MonoBehaviour
 
     public static UIManager Instance;
 
+    public ItemData beanData;
+    public ItemData coffeeData;
+
     public TMP_Text beanAmount;
     public TMP_Text moneyAmount;
 
     public TMP_Text beanLv;
     public TMP_Text coffeeLv;
+
+    // 업그레이드 버튼
+    public TMP_Text beanUpgradeBtnTxt;
+    public TMP_Text coffeeUpgradeBtnTxt;
 
     // 오토 버튼 정보
     public GameObject beanAutoBtn;
@@ -37,6 +45,26 @@ public class UIManager : MonoBehaviour
             Destroy(this);
         }
     }
+
+    private void Start()
+    {
+        // 초기값
+        int initialBeanCount = 0;
+        float initialMoney = CurrencyManager.Instance.money;
+        int initialBeanLevel = beanData.currentLevel;
+        int initialCoffeeLevel = coffeeData.currentLevel;
+        int nextBeanUpgradeCost = beanData.initialUpgradeCost;
+        int nextCoffeeUpgradeCost = coffeeData.initialUpgradeCost;
+
+        // 초기 UI 업데이트 함수 호출
+        UpdateBeanUI(initialBeanCount);
+        UpdateMoneyUI(initialMoney);
+        UpdateUpgradeBtn("Coffee Bean", initialBeanLevel, nextBeanUpgradeCost);
+        UpdateUpgradeBtn("Americano", initialCoffeeLevel, nextCoffeeUpgradeCost);
+     
+    }
+
+
     public void UpdateBeanUI(int beanCount)
     {
         beanAmount.text = "Coffee Beans : " + beanCount.ToString();
@@ -62,9 +90,35 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UpdateAutoBtn()
+    public void UpdateUpgradeBtn(string itemName, int currentLevel, int nextLevelCost)
     {
-        // 오토 버튼 레벨 업데이트
+        TMP_Text upgradeBtnText = null;
+
+        // itemName에 따라 올바른 텍스트 필드 선택
+        switch (itemName)
+        {
+            case "Coffee Bean":
+                upgradeBtnText = beanUpgradeBtnTxt;
+                break;
+            case "Americano":
+                upgradeBtnText = coffeeUpgradeBtnTxt;
+                break;
+            default:
+                
+                break;
+        }
+
+        // 선택한 텍스트 필드가 null이 아닌 경우 업데이트
+        if (upgradeBtnText != null)
+        {
+            upgradeBtnText.text = "Lv: " + currentLevel + "\nNext Level Cost: $" + nextLevelCost;
+        }
     }
 
+    public void UpdateAutoBtn()
+    {
+        // 오토 버튼 레벨 업데이트 (일반 버튼 업그레이드 하고 여유되면 하기)
+    }
+
+    
 }
