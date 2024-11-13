@@ -8,7 +8,7 @@ public class CurrencyManager : MonoBehaviour
 
     public static CurrencyManager Instance;
 
-    private float money;
+    private float money = 0;
 
     private void Awake()
     {
@@ -31,6 +31,10 @@ public class CurrencyManager : MonoBehaviour
 
     public bool CanAfford(float amount)
     {
+        // 잔액에 따라서
+        // 1. 커피 판매할 수 있음
+        // 2. Store에서 구입할 수 있는 아이템만 버튼이 활성화되게 하기
+      
         return money >= amount;
     }
 

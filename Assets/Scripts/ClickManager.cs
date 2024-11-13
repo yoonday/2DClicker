@@ -41,7 +41,7 @@ public class ClickManager : MonoBehaviour
         if (ScoreManager.Instance.CanUseBeans(clickReward))
         {
             ScoreManager.Instance.UpdateBeanCount(-clickReward);
-            ScoreManager.Instance.UpdateMoney(moneyReward);
+            CurrencyManager.Instance.EarnMoney(moneyReward);
         }
     }
 
