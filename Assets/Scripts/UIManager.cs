@@ -53,14 +53,15 @@ public class UIManager : MonoBehaviour
         float initialMoney = CurrencyManager.Instance.money;
         int initialBeanLevel = beanData.currentLevel;
         int initialCoffeeLevel = coffeeData.currentLevel;
-        int nextBeanUpgradeCost = beanData.initialUpgradeCost;
-        int nextCoffeeUpgradeCost = coffeeData.initialUpgradeCost;
+        int nextBeanUpgradeCost = 20;
+        int nextCoffeeUpgradeCost = 40;
 
         // 초기 UI 업데이트 함수 호출
         UpdateBeanUI(initialBeanCount);
         UpdateMoneyUI(initialMoney);
         UpdateUpgradeBtn("Coffee Bean", initialBeanLevel, nextBeanUpgradeCost);
         UpdateUpgradeBtn("Americano", initialCoffeeLevel, nextCoffeeUpgradeCost);
+
      
     }
 
