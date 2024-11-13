@@ -477,8 +477,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 671893611}
-        m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
-        m_MethodName: OnBeanClick
+        m_TargetAssemblyTypeName: AutoClickManager, Assembly-CSharp
+        m_MethodName: OnAutoClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -609,9 +609,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 671893612}
-        m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
-        m_MethodName: OnCoffeeClick
+      - m_Target: {fileID: 671893611}
+        m_TargetAssemblyTypeName: AutoClickManager, Assembly-CSharp
+        m_MethodName: OnAutoClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2046,6 +2046,8 @@ MonoBehaviour:
   clickReward: 1
   moneyReward: 0.3
   clickInterval: 4
+  beanAutoBtn: {fileID: 173626729}
+  coffeeAutoBtn: {fileID: 180543896}
 --- !u!114 &671893612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3891,7 +3893,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.34118018, g: 0.37013015, b: 0.38679248, a: 0.2509804}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.34118018, g: 0.37013015, b: 0.38679248, a: 0.2509804}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4690,7 +4692,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.34118018, g: 0.37013015, b: 0.38679248, a: 0.2509804}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.34118018, g: 0.37013015, b: 0.38679248, a: 0.2509804}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
