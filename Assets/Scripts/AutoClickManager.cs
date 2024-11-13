@@ -35,6 +35,14 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
         }
     }
 
+    public void SpeedUpClickInterval(float time)
+    {
+        if (clickInterval > 0) // 간격이 0이 되지 않도록 
+        {
+            clickInterval -= time;
+        }
+    }
+
 
     public void OnAutoClick(ItemData itemData) // UIManager - UpdateUnlock처럼 이름으로 찾기
     {
