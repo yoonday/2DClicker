@@ -10,7 +10,7 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
     private Coroutine coroutine;
     
     // 클릭 간격 설정 → 업데이트해서 클릭 간격 더 짧게 조정하기
-    public float clickInterval = 0.2f;
+    public float clickInterval = 2.0f;
 
     public Button beanAutoBtn;
     private Color beanInitialColor;
@@ -71,6 +71,7 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
             {
                 OnCoffeeClick();
             }
+
             yield return new WaitForSeconds(clickInterval);
         }
     }
