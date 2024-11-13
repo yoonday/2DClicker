@@ -16,7 +16,7 @@ public class ItemData : ScriptableObject
     public string tag; // 태그 - 일반, 오토 버튼 업그레이드 구분하기 위함
     public string autoBtnName; // 오토 버튼 이름
 
-    public int UpgradeItemLevelCost(int level) // 단계별 비용 2의 제곱으로 늘어남
+    public int UpgradeItemLevelCost(int level) // 업그레이드 비용 단계별 비용 2의 제곱으로 늘어남
     {
         return initialUpgradeCost* (int)Mathf.Pow(2, level - 1);
     }

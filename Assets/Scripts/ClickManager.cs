@@ -8,8 +8,8 @@ public class ClickManager : MonoBehaviour
     public static ClickManager Instance;
 
     // 클릭했을 때 커피 콩, 돈의 증가 및 감소
-    public int clickReward = 1; // 커피 콩 버튼 클릭 1회당 얻을 수 있는 커피 콩
-    public float moneyReward = 0.3f; // 커피 버튼 클릭 1회당 얻을 수 있는 돈($ 기준)
+    public static int clickReward = 1; // 커피 콩 버튼 클릭 1회당 얻을 수 있는 커피 콩
+    public static float moneyReward = 0.3f; // 커피 버튼 클릭 1회당 얻을 수 있는 돈($ 기준)
 
 
     private void Awake()
@@ -29,19 +29,13 @@ public class ClickManager : MonoBehaviour
         ScoreManager.Instance.UpdateBeanCount(clickReward);
     }
 
-    // 커피 콩 업그레이드 했을 때 → ClickReward 늘리기
-    public void IncreaseClickReward(int amount)
-    {
-        clickReward += amount;
-    }
-
     // 커피 버튼 클릭했을 때
     public void OnCoffeeClick()
     {
         if (ScoreManager.Instance.CanUseBeans(clickReward))
         {
             ScoreManager.Instance.UpdateBeanCount(-clickReward);
-            CurrencyManager.Instance.EarnMoney(moneyReward);
+            CurrencyManager.Instance.EarnMoney(moneyReward * clickReward);
         }
     }
 
