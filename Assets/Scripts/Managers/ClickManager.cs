@@ -11,6 +11,11 @@ public class ClickManager : MonoBehaviour
     public static int clickReward = 1; // 커피 콩 버튼 클릭 1회당 얻을 수 있는 커피 콩
     public static float moneyReward = 0.3f; // 커피 버튼 클릭 1회당 얻을 수 있는 돈($ 기준)
 
+
+    // 클릭 시 효과음
+    [SerializeField] private AudioClip BeanClickClip; // 커피 클릭할 때 
+    [SerializeField] private AudioClip coffeeClickClip;
+
     // 파티클 시스템
     public ParticleSystem clickParticle;
 
@@ -30,6 +35,8 @@ public class ClickManager : MonoBehaviour
     {
         ScoreManager.Instance.UpdateBeanCount(clickReward);
         ParticleEffect();
+
+        if (BeanClickClip) SoundManager.PlayClip(BeanClickClip);
     }
 
     // 커피 버튼 클릭했을 때
@@ -40,6 +47,8 @@ public class ClickManager : MonoBehaviour
             ScoreManager.Instance.UpdateBeanCount(-clickReward);
             CurrencyManager.Instance.EarnMoney(moneyReward * clickReward);
             ParticleEffect();
+
+            if (coffeeClickClip) SoundManager.PlayClip(coffeeClickClip);
         }
     }
 
