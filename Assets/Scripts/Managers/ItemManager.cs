@@ -63,6 +63,7 @@ public class ItemManager : MonoBehaviour
 
             int nextLevelCost = itemData.UpgradeItemLevelCost(itemData.currentLevel + 1); // 레벨업에 따른 비용 반영
             UIManager.Instance.UpdateUpgradeBtn(itemData.itemName, itemData.currentLevel, nextLevelCost);// UI 버튼 업데이트
+
            
         }
     }

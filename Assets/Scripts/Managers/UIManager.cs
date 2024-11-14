@@ -94,15 +94,18 @@ public class UIManager : MonoBehaviour
     public void UpdateUpgradeBtn(string itemName, int currentLevel, int nextLevelCost)
     {
         TMP_Text upgradeBtnText = null;
+        TMP_Text currentLvTxt = null;
 
         // itemName에 따라 올바른 텍스트 필드 선택
         switch (itemName)
         {
             case "Coffee Bean":
                 upgradeBtnText = beanUpgradeBtnTxt;
+                currentLvTxt = beanLv;
                 break;
             case "Americano":
                 upgradeBtnText = coffeeUpgradeBtnTxt;
+                currentLvTxt = coffeeLv;
                 break;
             default:
                 
@@ -112,7 +115,8 @@ public class UIManager : MonoBehaviour
         // 선택한 텍스트 필드가 null이 아닌 경우 업데이트
         if (upgradeBtnText != null)
         {
-            upgradeBtnText.text = "Lv: " + currentLevel + "\nNext Level Cost: $" + nextLevelCost;
+            upgradeBtnText.text = "Next Level Cost: $" + nextLevelCost;
+            currentLvTxt.text = $"Lv.{currentLevel} {itemName}";
         }
     }
 
