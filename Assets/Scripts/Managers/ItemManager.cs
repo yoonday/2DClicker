@@ -12,6 +12,17 @@ public class ItemManager : MonoBehaviour
     public GameObject unlockAutoBeanBtn;
     public GameObject unlockAutoCoffeeBtn;
 
+    public List<ItemData> itemDataList;
+
+    private void Start()
+    {
+        // 게임 시작 시 amount를 1로 초기화 → TODO :: 나중에 저장 기능 만들면 수정하기
+        foreach (var itemData in itemDataList)
+        {
+            itemData.amount = 1;
+        }
+    }
+
 
     public void BuyItem(ItemData itemData) // 아이템 구매
     {

@@ -2022,6 +2022,9 @@ MonoBehaviour:
   storePopUp: {fileID: 567268884}
   unlockAutoBeanBtn: {fileID: 173626727}
   unlockAutoCoffeeBtn: {fileID: 180543894}
+  itemDataList:
+  - {fileID: 11400000, guid: bb1739b75e67f0c469fd5380357a0985, type: 2}
+  - {fileID: 11400000, guid: 62d6fdcbea15158428b28f2b74d3d187, type: 2}
 --- !u!114 &671893610
 MonoBehaviour:
   m_ObjectHideFlags: 0
