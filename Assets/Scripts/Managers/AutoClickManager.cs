@@ -20,8 +20,6 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
     private Color coffeeInitialColor;
     public Color coffeeCoroutineColor;
 
-    private bool isAutoBtnActivate;
-
 
 
     void Start()
@@ -55,8 +53,8 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
         {
             StopCoroutine(coroutine);
             coroutine = null;
-            isAutoBtnActivate = false;
-            
+
+   
             // 색상 원래 색으로 돌리기
             if (itemData.autoBtnName == "btn_Auto_Bean" && beanAutoBtn != null)
             {
@@ -70,7 +68,7 @@ public class AutoClickManager : ClickManager // ClickManager 상속 받기
         else
         {
             coroutine = StartCoroutine(AutoClickCoroutine(itemData));
-            isAutoBtnActivate = true;
+
 
             // 버튼 활성화되었을 때 색 다르게 바꾸기
             if (itemData.autoBtnName == "btn_Auto_Bean" && beanAutoBtn != null)
